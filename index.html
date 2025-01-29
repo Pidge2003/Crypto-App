@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" integrity="sha512-MqL4+Io386IOPMKKyplKII0pVW5e+kb+PI/I3N87G3fHIfrgNNsRpzIXEi+0MQC0sR9xZNqZqCYVcC61fL5+Vg==" crossorigin="anonymous" referrerpolicy="no-referrer" />">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
     <title>Crypto App</title>
 </head>
 <body>
@@ -14,9 +14,32 @@
         <div class="global">
             <p> Coins: <b id="coins-count">14793</b></p>
             <p> Exchanges: <b id="exchanges-count">1164</b></p>
-            <p>Market Cap:<span><b id="marketCap">$2.297T</b></
-            span><span id="marketCapChange">-4.9%</span></p>
+            <p>Market Cap:<span><b id="marketCap">$2.297T </b></span><span id="marketCapChange">-4.9% <i 
+            class="ri-arrow-down-s-fill"></i></span></p>
+
+            <p>24H Vol: <b id="volume">$109.452B</b></p>
+            <p>Dominance: <b id="dominance">BTC 53.0% - ETH 15.6%</b></p>
+        
         </div>
+
+        <nav>
+            <div class="left-section">
+                <a href="#" class="logo">Logo.</a>
+                <div class="nav-links">
+                    <a href="/index.html" class="active">Home</a>
+                    <a href="/pages/charts.html">Charts</a>
+                    <a href="/pages/search.html">Search</a>
+                    <a href="/pages/about.html">About Us</a>
+                </div>
+                <div class="right-section"></div>
+                <form class="search" id="searchForm">
+                    <i class="ri-search-line"></i>
+                    <input type="text" id="searchInput" placeholder="Search for an asset..." 
+                    required autocomplete="off">
+                </form>
+                <i class="ri-sun-line"></i>
+            </div>
+        </nav>
     </div>
    
 </body>
