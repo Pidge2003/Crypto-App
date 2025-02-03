@@ -121,7 +121,7 @@ nav{
 }
 
 nav .left-section,
-nav.right-section {
+nav .right-section {
     display: flex;
     align-items: center;
     gap: 40px;    
@@ -149,4 +149,19 @@ nav .left-section .nav-links a.active,
 nav .left-section .nav-links a:hover{
     background: var(--background-color-secondary);
     color: var(--color-white);
+}
+
+nav .right-section{
+    width: 30%;
+    gap: 20px;
+}
+
+
+nav .right-section .search {
+    display: flex;
+    align-items: center;
+    background: var(--background-color-secondary);
+    padding: 0 10px;
+    border-radius: 12px;
+    width: 100%;
 }
