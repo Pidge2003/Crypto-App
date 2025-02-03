@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
+/*Global Colors*/
+
 :root {
     --background-color:#fff;
     --background-color-primary:#fff;
@@ -111,6 +113,8 @@ body{
     font-weight: 600;
 }
 
+/* Nav Bar Styling */
+
 nav{
     display: flex;
     align-items: center;
@@ -164,4 +168,35 @@ nav .right-section .search {
     padding: 0 10px;
     border-radius: 12px;
     width: 100%;
+}
+
+nav .right-section .search input{
+    padding: 10px 6px;
+    background: var(--background-color-secondary);
+    color: var(--color-white);
+    font-size: 14px;
+}
+
+nav .right-section .search input::placeholder,
+nav .right-section .search i{
+    color: var(--text-secondary);
+}
+
+nav .right-section > i{
+    padding:8px;
+    background: var(--background-color-secondary);
+    color: var(--color-white);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s easy;
+
+}
+
+nav .right-section > i.ri-sum-line{
+    transform: rotate(0deg);
+    
+}
+
+nav .right-section > i.ri-sum-line{
+    transform: rotate(360deg);
 }
