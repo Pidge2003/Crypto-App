@@ -92,6 +92,14 @@ table tr td img{
     border-radius: 12px;
 }
 
+table tr td:first-child{
+    border-radius: 12px 0 0 12px;
+}
+
+table tr td:last-child{
+    border-radius: 0 12px 12px 0;
+}
+
 body{
     background: var(--background-color);
     display: flex;
@@ -210,7 +218,6 @@ nav .right-section > i.ri-sum-line{
 }
 
 /* Trending/Hero section styling */
-
 .trending{
     margin: 40px;
     display: flex;
@@ -267,4 +274,51 @@ nav .right-section > i.ri-sum-line{
 .trending table tr td{
     color: var(--text-secondary);
     font-size: 13px;
+}
+
+.trending .coins-wrapper table tr:hover,
+.trending .coins-wrapper table tr:hover td.table-fixed-column{
+    background: var(--background-color-secondary);
+}
+
+.trending .coins-wrapper .container .table-fixed-column,
+.trending .nfts-wrapper .container .table-fixed-column{
+    left: -20px;
+}
+
+.table-fixed-column{
+    background: var(--background-color-primary);
+    position: sticky;
+    left: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+}
+
+.spinner{
+    display: none;
+    width: 50px;
+    height: 50px;
+    border: 6px solid var(--text-secondary);
+    border-top: 6px solid var(--background-color-secondary);
+    border-radius: 50%;
+    margin: 10px auto 20px;
+    animation: spin 3s linear infinite;
+
+}
+
+@keyframes spin{
+
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.error-message{
+    display: none;
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
 }
