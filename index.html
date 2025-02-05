@@ -171,6 +171,30 @@
 
         </div>
 
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-button active" onclick="openTab(event, 'tab1')"><i class="ri-apps-2-line"></i>Assets</button>
+                <button class="tab-button" onclick="openTab(event, 'tab2')"><i class="ri-arrow-left-right-line"></i>Exchanges</button>
+                <button class="tab-button" onclick="openTab(event, 'tab3')"><i class="ri-exchange-2-line"></i>Categories</button>
+                <button class="tab-button" onclick="openTab(event, 'tab4')"><i class="ri-btc-line"></i>Holders</button>
+            </div>
+            <div class="tab-content" id="tab1">
+                <div id="assets-list">
+                    <table>
+                        <thead>
+                            <th>Rank</th>
+                            <th class="table-column-fixed">Coin</th>
+                            <th>Price</th>
+                            <th>24h Price</th>
+                            <th>24h Price %</th>
+                            <th>Total Vol</th>
+                            <th>Market Cap</th>
+                            <th>Last 7 Days</th>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
 
 
     </div>
