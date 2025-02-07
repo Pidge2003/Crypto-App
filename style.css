@@ -100,6 +100,17 @@ table tr td:last-child{
     border-radius: 0 12px 12px 0;
 }
 
+table tr tr.rank{
+    padding-left: 10px;
+}
+
+table tr td.name-column{
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 30px;
+}
+
 body{
     background: var(--background-color);
     display: flex;
@@ -282,8 +293,8 @@ nav .right-section > i.ri-sum-line{
 
 .trending .coins-wrapper table tr:hover,
 .trending .coins-wrapper table tr:hover td.table-fixed-column,
-.tab-container .tab-content #asset-list table tr:hover,
-.tab-container .tab-content #asset-list table tr:hover td.table-column-fixed{
+.tab-container .tab-content #assets-list table tr:hover,
+.tab-container .tab-content #assets-list table tr:hover td.table-fixed-column{
     background: var(--background-color-secondary);
 }
 
@@ -347,3 +358,24 @@ nav .right-section > i.ri-sum-line{
     margin-bottom: 30px;
 }
 
+.tab-container .tabs .tab-button{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-container .tabs .tab-button i{
+    font-size: 20px;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.tab-container .tabs .tab-button.active,
+.tab-container .tabs .tab-button.active i{
+    color: var(--color-white);
+}
