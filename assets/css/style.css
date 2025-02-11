@@ -448,7 +448,14 @@ footer .social-icons a i{
     display: none;
 }
 
-.chart-container{
+main > h3{
+    color: var(--color-white);
+    margin: 40px 40px 20px;
+    font-weight: 500;
+}
+
+.chart-container,
+.search-container {
     margin: 40px 40px 0;
     background: var(--background-color-primary);
     border-radius: 12px;
@@ -460,3 +467,23 @@ footer .social-icons a i{
     margin-bottom: 20px;
 }
 
+/*Search Page Styling*/
+
+.search-container{
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    padding: 20px 20px 10px;
+    gap: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.search-container .item{
+    width: 38%;
+}
+
+.search-container .item h4{
+    color: var(--color-white);
+    font-weight: 500;
+    margin: 0 0 20px;
+}
