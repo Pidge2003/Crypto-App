@@ -601,3 +601,37 @@ main > h3{
     color: var(--text-secondary);
     font-size: 12px;
 }
+
+.coins-container .left-section .coins-info .logo p{
+    background: var(--background-color-secondary);
+    color: var(--color-white);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 12px;
+}
+
+.coins-container .left-section .coins-info .status,
+,.coins-container .right-section .status{
+    flex-direction: column;
+    gap: 10px;
+}
+
+.coins-container .left-section .coins-info .status .item,
+.coins-container .right-section .status .container .item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--border-color);
+    padding-bottom: 12px;
+    margin-top: 8px;
+}
+
+.coins-container .right-section .status .container .item:first-child{
+    margin-top: 0;
+}
+
+.coins-container .left-section .coins-info .status .item:last-child,
+.coins-container .right-section .status .container .item:last-child{
+    border-bottom: none;
+    padding-bottom: 0;
+}
