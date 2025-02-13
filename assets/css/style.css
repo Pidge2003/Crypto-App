@@ -541,3 +541,63 @@ main > h3{
 .about-container .info button:hover{
     background: var(--links-color);
 }
+
+/*Coins Page Styling*/
+
+.coins-container{
+    margin: 40px;
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.coins-container .left-section{
+    width: 30%;
+}
+
+.coins-container .left-section .ticker{
+    background: var(--background-color-primary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.coins-container .trading-view-widget-container{
+    padding: 10px;
+}
+
+.coins-container .left-section .coins-info,
+.coins-container .right-section .status .container{
+    background: var(--background-color-primary);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.coins-container .left-section > h3,
+.coins-container .right-section .status > h3{
+    color: var(--color-white);
+    font-weight: 500;
+    margin: 36px 0 20px;
+}
+
+.coins-container .left-section .coins-info .logo{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.coins-container .left-section .coins-info .logo img{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+
+.coins-container .left-section .coins-info .logo h4{
+    color: var(--color-white);
+}
+
+.coins-container .left-section .coins-info h4 span{
+    color: var(--text-secondary);
+    font-size: 12px;
+}
