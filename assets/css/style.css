@@ -635,3 +635,30 @@ main > h3{
     border-bottom: none;
     padding-bottom: 0;
 }
+
+.coins-container .left-section .coins-info .status .item p.str,
+.coins-container .right-section .status .container .item p.str{
+    color: var(--text-secondary);
+    font-size: 14px;
+    width: 42%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.coins-container .left-section .coins-info .status .item p.num,
+.coins-container .right-section .status .container .item p.num{
+    color: var(--color-white);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.about-container .main-container{
+    width: 48%;
+}
+
+.about-container .main-container .mini-chart .trading-view-widget-container{
+    padding: 0;
+}
+
