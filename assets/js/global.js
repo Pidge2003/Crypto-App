@@ -73,5 +73,14 @@ function displayGlobalData(globalData){
         const changeText = `${marketCapChange.toFixed(1)}%`;
         marketCapChangeElement.innerHTML = `${changeText} <i class="${marketCapChange < 0 ? 'red' : 'green'} ri-arrow-${marketCapChange < 0 ? 'down' : 'up'}-s-fill"></i>`;
         marketCapChangeElement.style.color = marketCapChange < 0 ? 'red' : 'green';
+    }else{
+        marketCapChangeElement.textContent = 'N/A'
     }
+
+    volume.textContent = globalData.total_volume?.usd ? `$${(globalData.total_volume.usd / 1e9).toFixed(3)}B` : 'N/A';
+
+    const btcDominance = globalData.market_cap_percentage?.btc ? `${globalData.market_cap_percentage.btc.toFixed(1)}%` : 'N/A';
+    const ethDominance = globalData.market_cap_percentage?.eth ? `${globalData.market_cap_percentage.eth.toFixed(1)}%` : 'N/A';
+
+    dominance.textContent = `BTC ${btcDominance} - ETH ${ethDominance}`;
 }
