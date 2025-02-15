@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 // Read data from local storage but if ?
 function getlocalStorageData(key){
-    const storedData =localStorage.getItem(key):
+    const storedData =localStorage.getItem(key);
     if(!storedData) return null
 
     const parsedData = JSON.parse(storedData);
@@ -35,7 +35,7 @@ function setLocalStorageData(key, data){
 
 function fetchGlobal(){
     const localStorageKey = 'Global_Data';
-    const localData = getLocalStorageData(localStorageKey);
+    const localData = getlocalStorageData(localStorageKey);
 
     if(localData){
         displayGlobalData(localData)
@@ -50,7 +50,13 @@ function fetchGlobal(){
                 setLocalStorageData(localStorageKey, globalData);
             })
             .catch(error => {
-
+                coinsCount.textContent = 'N/A';
+                exchangeCount.textContent = 'N/A'
+                marketCap.textContent = 'N/A'
+                marketCapChangeElement.textContent = 'N/A'
+                volume.textContent = 'N/A'
+                dominance.textContent = 'N/A'
+                console.error(error);
             })
     }
 
