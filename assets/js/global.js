@@ -61,3 +61,17 @@ function fetchGlobal(){
     }
 
 }
+
+function displayGlobalData(globalData){
+    coinsCount.textContent = globalData.active_cryptocurrencies || 'N/A';
+    exchangeCount.textContent =globalData.markets || 'N/A';
+
+    marketCap.textContent = globalData.total_market_cap?.usd ? `$${(globalData.total_market_cap.usd / 1e12).toFixed(3)}T` : 'N/A';
+    const marketCapChange = globalData.market_cap_change_percentage_24h_usd;
+
+    if (marketCapChange !== undefined){
+        const changeText = `${marketCapChange.toFixed(1)}%`;
+        marketCapChangeElement.innerHTML = `${changeText} <i class="${marketCapChange < 0 ? 'red' : 'green'} ri-arrow-${marketCapChange < 0 ? 'down' : 'up'}-s-fill"></i>`;
+        marketCapChangeElement.style.color = marketCapChange < 0 ? 'red' : 'green';
+    }
+}
