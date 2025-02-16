@@ -84,3 +84,15 @@ function displayGlobalData(globalData){
 
     dominance.textContent = `BTC ${btcDominance} - ETH ${ethDominance}`;
 }
+
+function toggleSpinner(listId, spinnerId, show){
+    const listElement = document.getElementById(listId);
+    const spinnerElement =document.getElementById(spinnerId);
+
+    if(spinnerElement){
+        spinnerElement.style.display = show ? 'block' : 'none';
+    }
+    if(listElement){
+        listElement.style.display = show ? 'none' : 'block';
+    }
+}
