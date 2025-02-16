@@ -17,9 +17,43 @@ function openTab(event, tabName){
 
     if (!tabDataLoaded[tabName]){
         switch (tabName){
-            case: 'tab1':
-            fetchAndDisplay('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=true',['assets-list'], displayAssets,
-            'Crypto_Data');
+            case 'tab1':
+                fetchAndDisplay('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=true',['assets-list'], displayAssets, tabName,
+                'Crypto_Data');
+                break;
+            case 'tab2':
+                fetchAndDisplay('https://api.coingecko/com/api/v3/exchanges', ['exchange-list'], displayExchanges, tabName, 'Exchanges_Data'):
+                break;
+            case 'tab3':
+                fetchAndDisplay('https://api.cryptogecko.com/api/v3/coins/categories', [category-list], displayCategories, tabName, 'Categories_Data');
+                break;
+            case 'tab4':
+                fetchAndDisplay('https://api.coingecko.com/api/v3/companies/public_treasury/bitcoin', ['company-list'], displayCompanies, tabName, 'Companies_Data');
+                break;
         }
     }
+}
+
+document.addEventListener("DOMContentLoaded", () =>{
+    document.querySelector(".tab-button").click();
+    fetchData();
+});
+
+async function fetchData(){
+    await Promise.all([
+        fetchAndDisplay('https://api.coingecko.com/api/v3/search/trending', ['coins-list', 'nfts-list'], displayTrends, null, 'Trending_Data'),
+        fetchAndDisplay('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=true', [assets-list], displayAssets, null,
+        'Crypto_Data'),
+    ]);
+}
+
+async function fetchAndDisplay(url, idsToToggle, displayFunction, tabName = null, localKey){
+    idsToToggle.forEach(id =>{
+        const errorElement = document.getElementById(`${id}-error`);
+
+        if(errorElement){
+            errorElement.style.display = 'none';
+        }
+        toggleSpinner(id, `${id}-spinner`, true);
+    })
 }
