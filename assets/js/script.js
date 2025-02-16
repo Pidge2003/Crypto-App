@@ -11,4 +11,7 @@ function openTab(event, tabName){
 
     tabContent.forEach(content => content.style.display = "none");
     tabButtons.forEach(button => button.classList.remove("active"));
+
+    document.getElementById(tabName).style.display = "block";
+    event.currentTarget.classList.add("active");
 }
