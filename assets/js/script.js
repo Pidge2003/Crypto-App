@@ -56,4 +56,37 @@ async function fetchAndDisplay(url, idsToToggle, displayFunction, tabName = null
         }
         toggleSpinner(id, `${id}-spinner`, true);
     })
+
+    const localStorageKey = localKey;
+    const localData = getlocalStorageData(localStorageKey);
+    // if localstorage data exist
+    if(localData){
+        idsToToggle.forEach(id => toggleSpinner(id, `${id}-spinner`, false));
+        displayFunction(localData);
+        if(tabName){
+            // set data as loaded, if not (api limit or error) with clicking on it, it will fetch it again, else nothing
+            tabDataLoaded[tabName] = true;
+        }
+    }else{
+        try{
+            const response = await fetch(url)
+            if (!response.ok) throw new Error('API limit reached');
+            const data = await response.json();
+            idsToToggle.forEach(id => toggleSpinner(id, `${id}-spinner`, false));
+            displayFunction(data);
+            setLocalStorageData(localStorage, data);
+            if(tabName){
+                tabDataLoaded[tabName] = true;
+            }
+        } catch(error){
+            idsToToggle.forEach(id => {
+                toggleSpinner(id, `${id}-spinner`, false)
+                document.getElementById(`${id}-error`).style.display = 'block';
+            });
+            if(tabName){
+                tabDataLoaded[tabName] = false;
+            }
+        }
+    }
+
 }
