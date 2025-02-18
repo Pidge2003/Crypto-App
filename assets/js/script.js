@@ -95,3 +95,9 @@ function displayTrends(data){
     displayTrendsCoins(data.coins.slice(0, 5));
     displayTrendsNfts(data.nfts.slice(0, 5));
 }
+
+function displayTrendsCoins(coins){
+    const coinsTable = document.getElementById('coins-list');
+    coinsTable.innerHTML = '';
+    const table = createTable(['Coin', 'Price', 'Market Cap', 'Volume', '24h%']);
+}
