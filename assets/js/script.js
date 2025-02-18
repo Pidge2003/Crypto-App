@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     fetchData();
 });
 
-/*async function fetchData(){
+async function fetchData(){
     await Promise.all([
         fetchAndDisplay('https://api.coingecko.com/api/v3/search/trending', ['coins-list', 'nfts-list'], displayTrends, null, 'Trending_Data'),
         fetchAndDisplay('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=true', [assets-list], displayAssets, null,
@@ -89,4 +89,9 @@ async function fetchAndDisplay(url, idsToToggle, displayFunction, tabName = null
         }
     }
 
+}
+
+function displayTrends(data){
+    displayTrendsCoins(data.coins.slice(0, 5));
+    displayTrendsNfts(data.nfts.slice(0, 5));
 }
