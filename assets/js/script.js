@@ -111,6 +111,7 @@ function displayTrendsCoins(coins){
             <td class="${coinData.data.price_change_percentage_24h.usd >= 0 ? 'green' : 'red'}">${coinData.data.price_change_percentage_24h.usd.toFixed(2)}%</td>
         `;
         row.onclick = () => window.location.href = `../../pages/coins.html?coins=${coinData.id}`;
+        table.appendChild(row);
     });
     coinsTable.appendChild(table);
 }
@@ -118,9 +119,9 @@ function displayTrendsCoins(coins){
 function displayTrendsNfts(nfts){
     const nftsTable = document.getElementById('nfts-list');
     nftsTable.innerHTML = '';
-    const table = createTable(['NFT', 'Market', 'Price', '24h Volume', '24h%']);
+    const table = createTable(['NFT', 'Market', 'Price', '24h Vol', '24h%']);
 
-    coins.forEach(nft =>{
+    nfts.forEach(nft =>{
         const row = document.createElement('tr');
         row.innerHTML = `<td class="name-column table-fixed-column"><img src="${nft.thumb}" alt="${nft.name}">${nft.name} <span>(${nft.symbol.toUpperCase()})</span></td>
             <td>${nft.native_currency_symbol.toUpperCase()}</td>
