@@ -97,8 +97,8 @@ function displayTrends(data){
 }
 
 function displayTrendsCoins(coins){
-    const coinsTable = document.getElementById('coins-list');
-    coinsTable.innerHTML = '';
+    const coinsList = document.getElementById('coins-list');
+    coinsList.innerHTML = '';
     const table = createTable(['Coin', 'Price', 'Market Cap', 'Volume', '24h%']);
 
     coins.forEach(coin =>{
@@ -113,15 +113,15 @@ function displayTrendsCoins(coins){
         row.onclick = () => window.location.href = `../../pages/coins.html?coins=${coinData.id}`;
         table.appendChild(row);
     });
-    coinsTable.appendChild(table);
+    coinsList.appendChild(table);
 }
 
 function displayTrendsNfts(nfts){
-    const nftsTable = document.getElementById('nfts-list');
-    nftsTable.innerHTML = '';
+    const nftsList = document.getElementById('nfts-list');
+    nftsList.innerHTML = '';
     const table = createTable(['NFT', 'Market', 'Price', '24h Vol', '24h%']);
 
-    nfts.forEach(nft =>{
+    coins.forEach(nft =>{
         const row = document.createElement('tr');
         row.innerHTML = `<td class="name-column table-fixed-column"><img src="${nft.thumb}" alt="${nft.name}">${nft.name} <span>(${nft.symbol.toUpperCase()})</span></td>
             <td>${nft.native_currency_symbol.toUpperCase()}</td>
@@ -131,11 +131,30 @@ function displayTrendsNfts(nfts){
         `;
         table.appendChild(row);
     });
-    nftsTable.appendChild(table);
+    nftsList.appendChild(table);
 }
 
 function displayAssets(data){
-    const cryptoTable = document.getElementById('assets-list');
-    nftsTable.innerHTML = '';
-    const table = createTable(['NFT', 'Market', 'Price', '24h Volume', '24h%']);
+    const cryptoList = document.getElementById('assets-list');
+    cryptoList.innerHTML = '';
+    const table = createTable(['Rank', 'Coin', 'Price', '24h Price', '24h Price%', 'Total Vol', 'Market Cap', 'Last 7 Days'], 1);
+
+    const sparklineData = []; 
+    data.forEach(asset =>{
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td class="rank">${asset.market_cap_rank}</td>
+            <td class="name-column table-fixed-column"><img src="${asset.image}" alt="${asset.name}">${asset.name}<span>${asset.symbol.toUpperCase()}
+            </span></td>
+            <td>$${asset.current_price.toFixed(2)}</td>
+            <td class="${asset.price_change_percentage_24h >= 0 ? 'green' : 'red'}">$${asset.price_change_percentage_24h.toFixed(2)}</td>
+            <td class="${asset.price_change_percentage_24h >= 0 ? 'green' : 'red'}">$${asset.price_change_percentage_24h.toFixed(2)}%</td>
+            <td>$${asset.total_volume.toLocaleString()}</td>
+            <td>$${asset.market_cap.toLocaleString()}</td>
+            <td><canvas id="chart-${asset.id}" width="100" height="50"</canvas></td>
+        `;
+        table.appendChild(row);
+        sparklineData.push()
+    });
 }
+
