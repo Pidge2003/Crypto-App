@@ -154,7 +154,54 @@ function displayAssets(data){
             <td><canvas id="chart-${asset.id}" width="100" height="50"</canvas></td>
         `;
         table.appendChild(row);
-        sparklineData.push()
+        sparklineData.push({
+            id: asset.id,
+            sparkline: asset.sparkline_in_7d.price,
+            color: asset.sparkline_in_7d.price[0] <= asset.sparkline_in_7d.price [asset.sparkline_in_7d.price.length -1] ? 'green' : 'red'
+        });
+        row.onclick = () => window.location.href = `../../pages/coins.html?coins=${coinData.id}`;
+        table.appendChild(row);
+    });
+    cryptoList.appendChild(table);
+
+    sparklineData.forEach(({id, sparkline, color}) => {
+        const ctx = document.createElement(`chart-${id}`).getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: sparkline.map((_, index) => index),
+                datasets: [
+                    {
+                        data:sparkline,
+                        borderColor: color,
+                        fill: false,
+                        pointRadius: 0,
+                        borderWidth: 1
+
+                    }
+                ]
+            },
+            option: {
+                responsive: false,
+                scales: {
+                    x : {
+                        display: false
+                    },
+                    y: {
+                        display: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        display: CSSFontFeatureValuesRule
+                    },
+                    tooltip: {
+                        enabled: false
+                    }
+                }
+            }
+
+        });
     });
 }
 
