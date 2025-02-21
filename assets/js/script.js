@@ -1,3 +1,5 @@
+// Clickabkle tabs funcitonality 
+
 const tabDataLoaded = {
     tab1: false,
     tab2: false,
@@ -96,6 +98,8 @@ function displayTrends(data){
     displayTrendsNfts(data.nfts.slice(0, 5));
 }
 
+//Function to pull through Coin data from API
+
 function displayTrendsCoins(coins){
     const coinsList = document.getElementById('coins-list');
     coinsList.innerHTML = '';
@@ -116,6 +120,8 @@ function displayTrendsCoins(coins){
     coinsList.appendChild(table);
 }
 
+//Function to pull through NFT data from API
+
 function displayTrendsNfts(nfts){
     const nftsList = document.getElementById('nfts-list');
     nftsList.innerHTML = '';
@@ -133,6 +139,8 @@ function displayTrendsNfts(nfts){
     });
     nftsList.appendChild(table);
 }
+
+//Function to pull through Assets data from API
 
 function displayAssets(data){
     const cryptoList = document.getElementById('assets-list');
@@ -165,7 +173,7 @@ function displayAssets(data){
     cryptoList.appendChild(table);
 
     sparklineData.forEach(({id, sparkline, color}) => {
-        const ctx = document.createElement(`chart-${id}`).getContext('2d');
+        const ctx = document.getElementById(`chart-${id}`).getContext('2d');
         new Chart(ctx, {
             type: 'line',
             data: {
@@ -181,7 +189,7 @@ function displayAssets(data){
                     }
                 ]
             },
-            option: {
+            options: {
                 responsive: false,
                 scales: {
                     x : {
@@ -193,7 +201,7 @@ function displayAssets(data){
                 },
                 plugins: {
                     legend: {
-                        display: CSSFontFeatureValuesRule
+                        display: false
                     },
                     tooltip: {
                         enabled: false
