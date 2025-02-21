@@ -121,13 +121,13 @@ function displayTrendsNfts(nfts){
     nftsList.innerHTML = '';
     const table = createTable(['NFT', 'Market', 'Price', '24h Vol', '24h%']);
 
-    coins.forEach(nft =>{
+    nfts.forEach(nft =>{
         const row = document.createElement('tr');
         row.innerHTML = `<td class="name-column table-fixed-column"><img src="${nft.thumb}" alt="${nft.name}">${nft.name} <span>(${nft.symbol.toUpperCase()})</span></td>
             <td>${nft.native_currency_symbol.toUpperCase()}</td>
             <td>${nft.data.floor_price}</td>
             <td>${nft.data.h24_volume}</td>
-            <td class="${parseFloat(nft.data.floor_price_in_usd_24h_percentage_change) >= 0 ? 'green' : 'red'}">${nft.data.floor_price_in_usd_24h_percentage_change.toFixed(2)}%</td>
+            <td class="${parseFloat(nft.data.floor_price_in_usd_24h_percentage_change) >= 0 ? 'green' : 'red'}">${parseFloat(nft.data.floor_price_in_usd_24h_percentage_change).toFixed(2)}%</td>
         `;
         table.appendChild(row);
     });
