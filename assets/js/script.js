@@ -1,4 +1,4 @@
-// Clickabkle tabs funcitonality 
+// Clickable tabs funcitonality 
 
 const tabDataLoaded = {
     tab1: false,
