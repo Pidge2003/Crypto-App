@@ -242,7 +242,7 @@ function displayExchanges(data){
 function displayCategories(data){
     const catagoriesList = document.getElementById('category-list');
     catagoriesList.innerHTML = '';
-    const table = createTable(['Top Coins', 'Category', 'Market Cap', '24h Trade', '24h Market Cap)', '24h Volume'], 1);
+    const table = createTable(['Top Coins', 'Category', 'Market Cap', '24h Market Cap', '24h Volume'], 1);
 
     data = data.slice(0, 20);
 
