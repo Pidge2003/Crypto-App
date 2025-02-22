@@ -239,6 +239,8 @@ function displayExchanges(data){
     exchangeList.appendChild(table);
 }
 
+// Pulls through categories data
+
 function displayCategories(data){
     const catagoriesList = document.getElementById('category-list');
     catagoriesList.innerHTML = '';
@@ -258,4 +260,25 @@ function displayCategories(data){
         table.appendChild(row);
     });
     catagoriesList.appendChild(table);
+}
+
+//Pulls through Holders Data
+
+function displayCompanies(data){
+    const companyList = document.getElementById('company-list');
+    companyList.innerHTML = '';
+    const table = createTable(['Company', 'Total BTC', 'Entry Value', 'Total Current Value', 'Total %']);
+
+    data.companies.forEach(company => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+           <td class="name-column table-fixed-column">${company.name}</td>
+           <td>${company.total_holdings}</td>
+           <td>${company.total_entry_value_usd}</td>
+           <td>${company.total_current_value_usd}</td>
+           <td class="${company.percentage_of_total_supply >= 0 ? 'green' : 'red'}">${company.percentage_of_total_supply}%</td>
+        `;
+        table.appendChild(row);
+    });
+    companyList.appendChild(table);
 }
