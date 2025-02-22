@@ -24,7 +24,7 @@ function openTab(event, tabName){
                 'Crypto_Data');
                 break;
             case 'tab2':
-                fetchAndDisplay('https://api.coingecko/.com/api/v3/exchanges', ['exchange-list'], displayExchanges, tabName, 'Exchanges_Data');
+                fetchAndDisplay('https://api.coingecko.com/api/v3/exchanges', ['exchange-list'], displayExchanges, tabName, 'Exchanges_Data');
                 break;
             case 'tab3':
                 fetchAndDisplay('https://api.coingecko.com/api/v3/coins/categories', ['category-list'], displayCategories, tabName, 'Categories_Data');
