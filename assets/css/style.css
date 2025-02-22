@@ -84,6 +84,14 @@ img{
     object-fit: cover;
 }
 
+table{
+    overflow: scroll;
+}
+
+table tr td{
+    white-space: nowrap;
+}
+
 table tr td img{
     width: 32px;
     height: 32px;
