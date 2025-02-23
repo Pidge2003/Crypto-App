@@ -65,5 +65,26 @@ function fetchSearchResult(param, idsToToggle){
             exchanges = exchanges.slice(0, minCount);
             nfts = nfts.slice(0, minCount);
           }
+          coinsResults(coins);
+          exchangesResult(exchanges);
+          nftsResult(nfts);
+
+          if(coins.length === 0){
+            coinsList.innerHTML = `<p style="color: red; text-align:center;">No results found for coins </p>`;
+          }
+          if(exchanges.length === 0){
+            exchangeslistList.innerHTML = `<p style="color: red; text-align:center;">No results found for exchanges </p>`;
+          }
+          if(nfts.length === 0){
+            nftsListt.innerHTML = `<p style="color: red; text-align:center;">No results found for nfts </p>`;
+          }
+
        })
+       .catch(error =>{
+          idsToToggle.forEach(id => {
+            toggleSpinner(id, `${id}-spinner`, false);
+            document.getElementById(`${id}-error`).style.display = 'block';
+          });
+          console.error('Error fetching data;', error);
+       });
 }
