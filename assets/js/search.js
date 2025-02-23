@@ -35,4 +35,21 @@ function fetchSearchResult(param, idsToToggle){
 
     const url = `https://api.coingecko.com/api/v3/search?query=${param}`;
     const options = {method: 'GET', headers: {accept: 'application/json'}};
+
+    fetch(url, options)
+       .then(response =>{
+          if(!response.ok){
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+          idsToToggle.forEach(id => toggleSpinner(id, `${id}-spinner`, false));
+          return response.json();
+       })
+       .then(data =>{
+        // filter results without image
+          let coins = (data.coins || []).filter(coin => coin.thumb !== "missing_thumb.png");
+          let exchanges = (data.exchanges || []).filter(ex => ex.thumb !== "missing_thumb.png");
+          let nfts = (data.nfts || []).filter(nf => nf.thumb !== "missing_thumb.png");
+
+    
+       })
 }
