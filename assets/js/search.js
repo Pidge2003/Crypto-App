@@ -88,3 +88,24 @@ function fetchSearchResult(param, idsToToggle){
           console.error('Error fetching data;', error);
        });
 }
+
+function coinsResult(coins){
+    coinsList.innerHTML = '';
+
+    const table = createTable([
+        'Rank', 'Coin'
+    ]);
+
+    coins.forEach(coin =>{
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${coin.market_cap_rank}</td>
+            <td class="name-column"><img src="${coin.thumb}" alt="${coin.name}">Bitcoin <span>(${coin.symbol.toUpperCase()})</span></td>
+        `;
+        table.appendChild(row);
+        row.onclick = () =>{
+            window.location.href = `../../pages/coins.html?coin=${coin.id}`;
+        };
+    });
+    coinsList.appendChild(table);
+}
