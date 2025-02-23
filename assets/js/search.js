@@ -109,3 +109,39 @@ function coinsResult(coins){
     });
     coinsList.appendChild(table);
 }
+
+function exchangesResult(exchanges){
+    exchangeslist.innerHTML = '';
+
+    const table = createTable([
+        'Exchange', 'Market'
+    ]);
+
+    exchanges.forEach(ex =>{
+        const row = document.createElement('tr');
+        row.innerHTML = `
+           <td class="name-column"><img src="${ex.thumb}" alt="${ex.name}">${ex.name}</td>
+           <td>${ex.market_type}</td>
+        `;
+        table.appendChild(row);
+    });
+    exchangeslist.appendChild(table);
+}
+
+function nftsResult(nfts){
+    nftsList.innerHTML = '';
+
+    const table = createTable([
+        'NFT', 'Symbol'
+    ]);
+
+    exchanges.forEach(nf =>{
+        const row = document.createElement('tr');
+        row.innerHTML = `
+           <td class="name-column"><img src="${nf.thumb}" alt="${nf.name}">${nf.name}</td>
+           <td class="name-column">${nf.symbol}</td>
+        `;
+        table.appendChild(row);
+    });
+    nftsList.appendChild(table);
+}
