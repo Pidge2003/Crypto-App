@@ -39,6 +39,10 @@ document.addEventListener("DOMContentLoaded", () =>{
         }
     }
 
+    if(typeof initializeWidget === 'function'){
+        initializeWidget();
+    }
+
     fetchGlobal();
 })
 
@@ -146,4 +150,30 @@ function createTable(headers, fixedIndex = 0){
     thead.appendChild(headerRow);
 
     return table;
+}
+
+//Trading view charts widget intergration
+
+function createWidget(container_id, widgetConfig, widgetSrc){
+    const container = document.getElementById(container_id);
+
+    container.innerHTML = '';
+
+    const widgetDiv = document.createElement('div');
+    widgetDiv.classList.add('tradingview-widget-container__widget');
+    container.appendChild(widgetDiv);
+
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = widgetSrc;
+    script.async = true;
+    script.innerHTML = JSON.stringify(widgetConfig);
+    container.appendChild(script);
+
+    setTimeout(() =>{
+        const copyright = document.querySelector('.tradingview-widget-copyright');
+        if(copyright){
+            copyright.classList.remove('hidden');
+        }
+    }, 5000)
 }

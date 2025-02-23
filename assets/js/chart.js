@@ -1,5 +1,7 @@
+//Trading view charts widget 
+
 function getThemeConfig(){
-    const root = getComputedStyle('document.documentElement');
+    const root = getComputedStyle(document.documentElement);
     const isDarkTheme = localStorage.getItem('theme') === 'light-theme' ? false : true;
 
     const backgroundColor = root.getPropertyValue(isDarkTheme ? '--chart-dark-bg' : '--chart-light-bg').trim();
