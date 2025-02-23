@@ -43,6 +43,14 @@ document.addEventListener("DOMContentLoaded", () =>{
         initializeWidget();
     }
 
+    const form = document.getElementById('searchForm');
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const query= document.getElementById('searchInput').ariaValueMax.trim();
+        if(!query) return
+    });
+
     fetchGlobal();
 })
 
