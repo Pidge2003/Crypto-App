@@ -45,11 +45,25 @@ function fetchSearchResult(param, idsToToggle){
           return response.json();
        })
        .then(data =>{
-        // filter results without image
+
+// filter results without image
+
           let coins = (data.coins || []).filter(coin => coin.thumb !== "missing_thumb.png");
           let exchanges = (data.exchanges || []).filter(ex => ex.thumb !== "missing_thumb.png");
           let nfts = (data.nfts || []).filter(nf => nf.thumb !== "missing_thumb.png");
 
-    
+// Show equal results for each category
+
+          const coinsCount = coins.length;
+          const exchangeCount = exchanges.length;
+          const nftCount = nfts.list
+
+          let minCount = Math.min(coinsCount, exchangeCount, nftCount);
+
+          if(coinsCount > 0 && exchangeCount > 0 & nftCount > 0){
+            coins = coins.slice(0,minCount);
+            exchanges = exchanges.slice(0, minCount);
+            nfts = nfts.slice(0, minCount);
+          }
        })
 }
