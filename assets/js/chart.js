@@ -21,7 +21,11 @@ function getThemeConfig(){
         save_image: true,
         details: true,
         calendar: false,
-        support_host 'https://www.tradingview.com'
+        support_host: 'https://www.tradingview.com'
+    };
+}
 
-    }
+function initializeWidget(){
+    const widgetConfig = getThemeConfig();
+    createWidget('chart-widget', widgetConfig, 'https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js');
 }
