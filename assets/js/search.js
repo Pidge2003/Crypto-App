@@ -1,15 +1,15 @@
 const coinsList = document.getElementById('coins-list');
-const exchangeslist = document.getElementById('exchanges-list');
+const exchangesList = document.getElementById('exchanges-list');
 const nftsList = document.getElementById('nfts-list');
 
 document.addEventListener('DOMContentLoaded', ()=>{
     const params = new URLSearchParams(window.location.search);
     const query = params.get('query');
     if(query){
-        fetchSearchResult(query, [coinsList, exchangeslist, nftsList]);
+        fetchSearchResult(query, [coinsList, exchangesList, nftsList]);
     }else{
         const searchHeading = document.getElementById('searchHeading');
-        const searchContainer = document.querySelector('.search-container')
+        const searchContainer = document.querySelector('.search-container');
         searchContainer.innerHTML = `<p style="color: red; text-align:center; margin-bottom: 8px">Nothing To Show...</p>`;
         searchHeading.innerText = 'Please search something...';
     }
@@ -24,11 +24,11 @@ function fetchSearchResult(param, idsToToggle){
         if(errorElement){
             errorElement.style.display = 'none';
         }
-        toggleSpinner(id, `${id}-spinner`, true)
+        toggleSpinner(id, `${id}-spinner`, true);
     });
 
     coinsList.innerHTML = '';
-    exchangeslist.innerHTML = '';
+    exchangesList.innerHTML = '';
     nftsList.innerHTML = '';
 
     searchHeading.innerText = `Search results for "${param}"`;
@@ -55,12 +55,12 @@ function fetchSearchResult(param, idsToToggle){
 // Show equal results for each category
 
           const coinsCount = coins.length;
-          const exchangeCount = exchanges.length;
-          const nftCount = nfts.length;
+          const exchangesCount = exchanges.length;
+          const nftsCount = nfts.length;
 
-          let minCount = Math.min(coinsCount, exchangeCount, nftCount);
+          let minCount = Math.min(coinsCount, exchangesCount, nftsCount);
 
-          if(coinsCount > 0 && exchangeCount > 0 & nftCount > 0){
+          if(coinsCount > 0 && exchangesCount > 0 & nftsCount > 0){
             coins = coins.slice(0,minCount);
             exchanges = exchanges.slice(0, minCount);
             nfts = nfts.slice(0, minCount);
@@ -111,7 +111,7 @@ function coinsResult(coins){
 }
 
 function exchangesResult(exchanges){
-    exchangeslist.innerHTML = '';
+    exchangesList.innerHTML = '';
 
     const table = createTable([
         'Exchange', 'Market'
@@ -125,7 +125,7 @@ function exchangesResult(exchanges){
         `;
         table.appendChild(row);
     });
-    exchangeslist.appendChild(table);
+    exchangesList.appendChild(table);
 }
 
 function nftsResult(nfts){
@@ -145,3 +145,5 @@ function nftsResult(nfts){
     });
     nftsList.appendChild(table);
 }
+
+console.log({ coinsList, exchangesList, nftsList });

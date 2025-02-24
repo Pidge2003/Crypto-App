@@ -48,7 +48,9 @@ document.addEventListener("DOMContentLoaded", () =>{
         event.preventDefault();
 
         const query= document.getElementById('searchInput').value.trim();
-        if(!query) return
+        if(!query) return;
+
+        window.location.href = `/../../pages/search.html?query=${query}`;
     });
 
     fetchGlobal();
