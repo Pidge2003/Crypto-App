@@ -50,3 +50,39 @@ const widgetConfig2 = {
     "dateFormat": "yyyy-mm-dd"
 
 }
+
+document.addEventListener("DOMContentLoaded", () =>{
+
+    const params = new URLSearchParams(window.location.search);
+    const query = params.get('coin');
+
+    if(query){
+        fetchCoinInfo(query);
+    }else{
+        window.location.href = "/../../index.html";
+    }
+});
+
+async function fetchCoinInfo(query){
+    const coinInfoError = document.getElementById('coin-info-error');
+    coinInfoError.style.display = 'none';
+    const apiURL = `https://api.coingecko.com/api/v3/coins/${query}`;
+
+    try{
+        const response = await fetch(apiURL);
+        if (!response.ok) throw new Error('API Limit Reached');
+        const data = await response.json();
+        widgetConfig1.symbol = `MEXC:${data.symbol.toUpperCase()}USDT`;
+
+        widgetConfig2.symbols = [
+            [`MEXC:${data.symbol.toUpperCase()}USDT|1D`]
+        ];
+
+        initializeWidget();
+        displayCoinInfo(data);
+    } catch(error){
+        coinInfoError.style.display = 'flex';
+        console.log(error);
+    }
+}
+
