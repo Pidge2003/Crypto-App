@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () =>{
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
-        const query= document.getElementById('searchInput').ariaValueMax.trim();
+        const query= document.getElementById('searchInput').value.trim();
         if(!query) return
     });
 

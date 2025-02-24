@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     if(query){
         fetchSearchResult(query, [coinsList, exchangeslist, nftsList]);
     }else{
-        const searchHeading = document.getElementById('searchHeadig');
+        const searchHeading = document.getElementById('searchHeading');
         const searchContainer = document.querySelector('.search-container')
-        searchContainer.innerHTML = `<p style-"color: red; text-align:center; margin-bottom: 8px">Nothing To Show...</p>`;
+        searchContainer.innerHTML = `<p style="color: red; text-align:center; margin-bottom: 8px">Nothing To Show...</p>`;
         searchHeading.innerText = 'Please search something...';
     }
 });
@@ -31,7 +31,7 @@ function fetchSearchResult(param, idsToToggle){
     exchangeslist.innerHTML = '';
     nftsList.innerHTML = '';
 
-    searchHeading.innerText = `Search results for "${param}`;
+    searchHeading.innerText = `Search results for "${param}"`;
 
     const url = `https://api.coingecko.com/api/v3/search?query=${param}`;
     const options = {method: 'GET', headers: {accept: 'application/json'}};
@@ -56,7 +56,7 @@ function fetchSearchResult(param, idsToToggle){
 
           const coinsCount = coins.length;
           const exchangeCount = exchanges.length;
-          const nftCount = nfts.list
+          const nftCount = nfts.length;
 
           let minCount = Math.min(coinsCount, exchangeCount, nftCount);
 
@@ -65,7 +65,7 @@ function fetchSearchResult(param, idsToToggle){
             exchanges = exchanges.slice(0, minCount);
             nfts = nfts.slice(0, minCount);
           }
-          coinsResults(coins);
+          coinsResult(coins);
           exchangesResult(exchanges);
           nftsResult(nfts);
 
@@ -73,10 +73,10 @@ function fetchSearchResult(param, idsToToggle){
             coinsList.innerHTML = `<p style="color: red; text-align:center;">No results found for coins </p>`;
           }
           if(exchanges.length === 0){
-            exchangeslistList.innerHTML = `<p style="color: red; text-align:center;">No results found for exchanges </p>`;
+            exchangesList.innerHTML = `<p style="color: red; text-align:center;">No results found for exchanges </p>`;
           }
           if(nfts.length === 0){
-            nftsListt.innerHTML = `<p style="color: red; text-align:center;">No results found for nfts </p>`;
+            nftsList.innerHTML = `<p style="color: red; text-align:center;">No results found for nfts </p>`;
           }
 
        })
@@ -135,7 +135,7 @@ function nftsResult(nfts){
         'NFT', 'Symbol'
     ]);
 
-    exchanges.forEach(nf =>{
+    nfts.forEach(nf =>{
         const row = document.createElement('tr');
         row.innerHTML = `
            <td class="name-column"><img src="${nf.thumb}" alt="${nf.name}">${nf.name}</td>

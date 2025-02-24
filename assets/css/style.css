@@ -456,7 +456,7 @@ footer .social-icons a i{
     display: none;
 }
 
-main > h3{
+.main > h3{
     color: var(--color-white);
     margin: 40px 40px 20px;
     font-weight: 500;
