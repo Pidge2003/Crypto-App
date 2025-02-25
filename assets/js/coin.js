@@ -86,3 +86,23 @@ async function fetchCoinInfo(query){
     }
 }
 
+function initializeWidget(){
+    const themeConfig = getThemeConfig();
+    widgetConfig1.colorTheme = themeConfig.theme;
+    widgetConfig2.colorTheme = themeConfig.theme;
+    widgetConfig2.backgroundColor = themeConfig.backgroundColor;
+    widgetConfig2.colorTheme = themeConfig.gridColor;
+
+    createWidget('ticker-widget', widgetConfig1, 'https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js');
+    createWidget('mini-chart-widget', widgetConfig2, 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js');
+}
+
+function displayCoinInfo(coin){
+    const coinInfo = document.querySelector('.oin-info');
+    const rightSec = document.querySelector('.coin-container .right-setion');
+    const coinDesc = document.getElementById('.coin-desc-p');
+
+    coinInfo.innerHTML = `
+    
+    `
+}
