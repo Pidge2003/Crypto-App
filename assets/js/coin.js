@@ -118,29 +118,102 @@ function displayCoinInfo(coin){
         <p class="num">$${coin.market_data.market_cap.usd != null ? coin.market_data.market_cap.usd.toLocaleString(undefined {minimumFractionDigits: 3, maximumFractionDigits: 3 }) : "N/A"}</p>
     </div>
     <div class="item">
-        <p class="str">All Time Low</p>
-        <p class="num">$73,738.000</p>
+        <p class="str">All Time High</p>
+        <p class="num">$${coin.market_data.ath.usd != null ? coin.market_data.ath.usd.toLocaleString(undefined, { minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
     </div>
     <div class="item">
         <p class="str">All Time Low</p>
-        <p class="num">$67.810</p>
+        <p class="num">$${coin.market_data.atl.usd != null ? coin.market_data.atl.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
     </div>
     <div class="item">
         <p class="str">Total Volume</p>
-        <p class="num">$44,479,445,945.000</p>
+        <p class="num">$${coin.market_data.total_volume.usd != null ? coin.market_data.total_volume.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
     </div>
     <div class="item">
         <p class="str">Total Supply</p>
-        <p class="num">21,000,000.000</p>
+        <p class="num">${coin.market_data.total_supply != null ? coin.market_data.total_supply.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
     </div>
     <div class="item">
         <p class="str">Max Supply</p>
-        <p class="num">21,000,000.000</p>
+        <p class="num">${coin.market_data.max_supply != null ? coin.market_data.max_supply.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
     </div>
     <div class="item">
         <p class="str">Circulating Supply</p>
-        <p class="num">19,734,778.000</p>
+        <p class="num">${coin.market_data.circulating_supply != null ? coin.market_data.circulating_supply.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
     </div>
     </div>
-    `
+    `;
+
+    rightSec.innerHTML = `
+    <div class="status">
+                    <h3>Historical Info</h3>
+                    <div class="container">
+                        <div class="item">
+                            <p class="str">ATH</p>
+                            <p class="num">$${coin.market_data.ath.usd != null ? coin.market_data.ath.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
+                        </div>
+                        <div class="item">
+                            <p class="str">ATL</p>
+                            <p class="num">$${coin.market_data.atl.usd != null ? coin.market_data.atl.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
+                        </div>
+                        <div class="item">
+                            <p class="str">24h High</p>
+                            <p class="num">$${coin.market_data.high_24h.usd != null ? coin.market_data.high_24h.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
+                        </div>
+                        <div class="item">
+                            <p class="str">24h Low</p>
+                            <p class="num">$${coin.market_data.low_24h.usd != null ? coin.market_data.low_24h.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3}) : "N/A"}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="status">
+                    <h3>Markets</h3>
+                    <div class="container">
+                        <div class="item">
+                            <p class="str">${coin.tickers[0].market.name.replace('Exchange', '')}</p>
+                            <div class="links">
+                                <a href="${coin.tickers[0].trade_url}">Trade</a>
+                                <p style="background-color: ${coin.tickers[0].trust_score};">Trust: ${coin.tickers[0].trust_score}</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <p class="str">${coin.tickers[1].market.name.replace('Exchange', '')}</p>
+                            <div class="links">
+                                <a href="${coin.tickers[1].trade_url}">Trade</a>
+                                <p style="background-color: ${coin.tickers[1].trust_score};">Trust: ${coin.tickers[1].trust_score}</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <p class="str">>${coin.tickers[2].market.name.replace('Exchange', '')}</p>
+                            <div class="links">
+                                <a href="${coin.tickers[2].trade_url}">Trade</a>
+                                <p style="background-color: ${coin.tickers[2].trust_score};">Trust: ${coin.tickers[2].trust_score}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="status">
+                    <h3>Info</h3>
+                    <div class="container">
+                        <div class="item">
+                            <p class="str">Website</p>
+                            <div class="links">
+                                <a target="_blank" href="${coin.links.homepage}">Visit</a>
+                                <a target="_blank" href="${coin.links.homepage}">Whitepaper</a>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <p class="str">Community</p>
+                            <div class="links">
+                                <a target="_blank" href="https://x.com/${coin.links.twitter_screen_name}">Visit</a>
+                                <a target="_blank" href="https://x.com/${coin.links.twitter_facebook_username}">Facebook</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    `;
+
+    coinDesc.innerHTML = coin.description.en || '<p class="red"> Asset description not available!</p>';
+
 }
+
