@@ -99,7 +99,7 @@ function initializeWidget(){
 
 function displayCoinInfo(coin){
     const coinInfo = document.querySelector('.oin-info');
-    const rightSec = document.querySelector('.coin-container .right-setion');
+    const rightSec = document.querySelector('.coin-container .right-section');
     const coinDesc = document.getElementById('.coin-desc-p');
 
     coinInfo.innerHTML = `
@@ -111,11 +111,11 @@ function displayCoinInfo(coin){
     <div class="status">
     <div class="item">
         <p class="str">Market Cap</p>
-        <p class="num">$${coin.market_data_cap.usd != null ? coin.market_data.market_cap.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3 }) : "N/A"}</p>
+        <p class="num">$${coin.market_data.market_cap.usd != null ? coin.market_data.market_cap.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3 }) : "N/A"}</p>
     </div>
     <div class="item">
         <p class="str">Current Price</p>
-        <p class="num">$${coin.market_data.market_cap.usd != null ? coin.market_data.market_cap.usd.toLocaleString(undefined {minimumFractionDigits: 3, maximumFractionDigits: 3 }) : "N/A"}</p>
+        <p class="num">$${coin.market_data.market_cap.usd != null ? coin.market_data.market_cap.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3 }) : "N/A"}</p>
     </div>
     <div class="item">
         <p class="str">All Time High</p>
@@ -217,3 +217,13 @@ function displayCoinInfo(coin){
 
 }
 
+function getThemeConfig(){
+    const root = getComputedStyle(document.documentElement);
+    const isDarkTheme = localStorage.getItem('theme') === 'light-theme' ? false : true;
+
+    return{
+        theme: isDarkTheme ? 'dark' : 'light',
+        backgroundColor: root.getPropertyValue(isDarkTheme ? '--chart-dark-bg' : '--chart-light-bg').trim(),
+        gridColor: root.getPropertyValue(isDarkTheme ? '--chart-dark-border' : '--chart-light-border').trim()
+    };
+}
