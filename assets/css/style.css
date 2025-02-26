@@ -724,3 +724,9 @@ footer .social-icons a i{
 .coin-desc p a{
     color: var(--links-color);
 }
+
+.coins-container .main-section .mini-chart{
+    width: 100%;
+    height: 100%;
+    color: var(--color-black);
+}

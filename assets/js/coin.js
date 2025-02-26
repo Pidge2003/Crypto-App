@@ -91,7 +91,7 @@ function initializeWidget(){
     widgetConfig1.colorTheme = themeConfig.theme;
     widgetConfig2.colorTheme = themeConfig.theme;
     widgetConfig2.backgroundColor = themeConfig.backgroundColor;
-    widgetConfig2.colorTheme = themeConfig.gridColor;
+    widgetConfig2.colorTheme = themeConfig.theme;
 
     createWidget('ticker-widget', widgetConfig1, 'https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js');
     createWidget('mini-chart-widget', widgetConfig2, 'https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js');
