@@ -103,6 +103,44 @@ function displayCoinInfo(coin){
     const coinDesc = document.getElementById('.coin-desc-p');
 
     coinInfo.innerHTML = `
-    
+    <div class="logo">
+    <img src="${coin.image.thumb}" alt="${coin.name}">
+    <h4>${coin.name} <span>(${coin.symbol.toUpperCase()})</span></h4>
+    <p>#${coin.market_cap_rank}</p>
+    </div>
+    <div class="status">
+    <div class="item">
+        <p class="str">Market Cap</p>
+        <p class="num">$${coin.market_data_cap.usd != null ? coin.market_data.market_cap.usd.toLocaleString(undefined, {minimumFractionDigits: 3, maximumFractionDigits: 3 }) : "N/A"}</p>
+    </div>
+    <div class="item">
+        <p class="str">Current Price</p>
+        <p class="num">$${coin.market_data.market_cap.usd != null ? coin.market_data.market_cap.usd.toLocaleString(undefined {minimumFractionDigits: 3, maximumFractionDigits: 3 }) : "N/A"}</p>
+    </div>
+    <div class="item">
+        <p class="str">All Time Low</p>
+        <p class="num">$73,738.000</p>
+    </div>
+    <div class="item">
+        <p class="str">All Time Low</p>
+        <p class="num">$67.810</p>
+    </div>
+    <div class="item">
+        <p class="str">Total Volume</p>
+        <p class="num">$44,479,445,945.000</p>
+    </div>
+    <div class="item">
+        <p class="str">Total Supply</p>
+        <p class="num">21,000,000.000</p>
+    </div>
+    <div class="item">
+        <p class="str">Max Supply</p>
+        <p class="num">21,000,000.000</p>
+    </div>
+    <div class="item">
+        <p class="str">Circulating Supply</p>
+        <p class="num">19,734,778.000</p>
+    </div>
+    </div>
     `
 }
