@@ -413,14 +413,16 @@ footer p{
     font-size: 13px;
 }
 
-footer .social-icons{
+footer .social-icons,
+.overlay .social-icons{
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 footer .social-icons a,
-#scrollTop{
+#scrollTop,
+.overlay .social-icons a{
     background: var(--background-color);
     padding: 8px;
     border-radius: 12px;
@@ -429,11 +431,13 @@ footer .social-icons a,
 }
 
 footer .social-icons a:hover,
-#scrollTop:hover{
+#scrollTop:hover,
+.overlay .social-icons a:hover{
     background: var(--links-color);
 }
 
-footer .social-icons a i{
+footer .social-icons a i,
+.overlay .social-icons a i{
     font-size: 26px;
     color: var(--color-white);
 }
@@ -730,6 +734,67 @@ footer .social-icons a i{
     height: 100%;
     color: var(--color-black);
 }
+
+#openMenu{
+    background: var(--background-color-secondary);
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: none;
+}
+
+.overlay{
+    position: fixed;
+    background: var(--background-color);
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transition: opacity 0.3s ease, visibility 0.5s ease;
+}
+
+.overlay .nav-links{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.overlay .nav-links a{
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.overlay .nav-links a.active,
+.overlay .nav-links a:hover{
+    color: var(--links-color);
+}
+
+.overlay button#closeMenu{
+    background: transparent;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.overlay button#closeMenu i{
+    font-size: 34px;
+    transition: all 0.3s ease;
+}
+
+.overlay button#closeMenu i:hover{
+    color: var(--links-color);
+}
+
+
+
 
 /* 1400 px optimization */
 
