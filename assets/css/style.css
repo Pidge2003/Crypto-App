@@ -795,4 +795,115 @@ footer .social-icons a i{
         width: 60%;
     }
 
+    .about-container .image img{
+        width: 90%;
+    }
+
+}
+
+/*992px screen width*/
+
+@media screen and (max-width: 992px){
+
+    .global{
+        gap: 30px;
+    }
+
+    .global p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    nav .left-section{
+        gap: 20px;
+    }
+
+    .trending{
+        flex-direction: column;
+        gap: 36px;
+    }
+
+    .trending .coins-wrapper,
+    .trending .nfts-wrapper{
+        width: 100%;
+    }
+    
+    .footer{
+        width: 100%;
+        padding: 16px 90px;
+    }
+
+    tab-content #category-list,
+    .tab-content #company-list{
+        overflow-x: scroll;
+    }
+
+    .tab-content #category-list table,
+    .tab-content #company-list table{
+        width: 150%;
+    }
+
+    #asset-list table,
+    #exchange-list table{
+        width: 200%;
+    }
+
+    .search-container{
+        flex-wrap: wrap;
+    }
+
+    .search-container .item:nth-child(1),
+    .search-container .item:nth-child(2){
+        width: 48%;
+    }
+
+    .search-container .item:nth-child(3){
+        width: 100%;
+    }
+
+    .search-container .item:nth-child(3) h4{
+        margin: 10px 0 20px;
+        border-top: 1px dashed var(--border-color);
+        padding-top: 20px;
+    }
+
+    .about-container{
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+
+    .about-container .image{
+        text-align: center;
+    }
+
+    .about-container .image img{
+        width: 60%;
+    }
+
+    .coins-container .left-section{
+        width: 100%;
+    }
+
+    .coins-container .main-section{
+        width: 100%;
+        height: 50vh;
+    }
+
+    .coins-container .right-section{
+        flex-wrap: wrap;
+    }
+
+    .coins-container .right-section .status:first-child{
+        width: 100%;
+    }
+
+    .coins-container .right-section .status{
+        width: 48%;
+    }
+
+    .coins-container .right-section > h3{
+        margin-top: 10px;
+    }
 }
