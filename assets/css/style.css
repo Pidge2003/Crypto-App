@@ -730,3 +730,36 @@ footer .social-icons a i{
     height: 100%;
     color: var(--color-black);
 }
+
+/* 1400 px optimisation */
+
+@media screen and (max-width: 1400px) {
+
+    .coins-container{
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .coins-container .left-section{
+        width: 38%;
+    }
+
+    .coins-container .main-section{
+        width: 59%;
+    }
+
+    .coins-container .right-section{
+        flex-direction: row;
+        width: 100%;
+        gap: 20px;
+    }
+
+    .coins-container .right-section .status{
+        width: 33%;
+    }
+
+    .coins-container .right-section .status > h3,
+    .coins-container .right-section .status:first-child > h3{
+        margin: 30px 0 20px;
+    }
+}
