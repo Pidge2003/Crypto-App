@@ -803,31 +803,31 @@ footer .social-icons a i,
 
 @media screen and (max-width: 1400px) {
     
-    .coin-container{
+    .coins-container{
         flex-wrap: wrap;
         justify-content: space-between;
     }
 
-    .coin-container .left-section{
+    .coins-container .left-section{
         width: 38%;
     }
 
-    .coin-container .main-section{
+    .coins-container .main-section{
         width: 59%;
     }
 
-    .coin-container .right-section{
+    .coins-container .right-section{
         flex-direction: row;
         width: 100%;
         gap: 20px;
     }
 
-    .coin-container .right-section .status{
+    .coins-container .right-section .status{
         width: 33%;
     }
 
-    .coin-container .right-section .status > h3,
-    .coin-container .right-section .status:first-child > h3{
+    .coins-container .right-section .status > h3,
+    .coins-container .right-section .status:first-child > h3{
         margin: 30px 0 20px;
     }
 
@@ -841,13 +841,13 @@ footer .social-icons a i,
 
     .trending .coins-wrapper .container,
     .trending .nfts-wrapper .container,
-    .tab-content #asset-list,
+    .tab-content #assets-list,
     .tab-content #exchange-list{
         overflow-x: scroll;
     }
 
     .trending table,
-    #asset-list table,
+    #assets-list table,
     #exchange-list table{
         width: 150%;
     }
@@ -909,7 +909,7 @@ footer .social-icons a i,
         width: 150%;
     }
 
-    #asset-list table,
+    #assets-list table,
     #exchange-list table{
         width: 200%;
     }
@@ -946,28 +946,28 @@ footer .social-icons a i,
         width: 60%;
     }
 
-    .coin-container .left-section{
+    .coins-container .left-section{
         width: 100%;
     }
 
-    .coin-container .main-section{
+    .coins-container .main-section{
         width: 100%;
         height: 50vh;
     }
 
-    .coin-container .right-section{
+    .coins-container .right-section{
         flex-wrap: wrap;
     }
 
-    .coin-container .right-section .status:first-child{
+    .coins-container .right-section .status:first-child{
         width: 100%;
     }
 
-    .coin-container .right-section .status{
+    .coins-container .right-section .status{
         width: 48%;
     }
 
-    .coin-container .right-section > h3{
+    .coins-container .right-section > h3{
         margin-top: 10px;
     }
 
@@ -1004,7 +1004,7 @@ footer .social-icons a i,
         width: 50%;
     }
 
-    #asset-list table,
+    #assets-list table,
     #exchange-list table,
     .tab-content #category-list table{
         width: 300%;
@@ -1042,7 +1042,7 @@ footer .social-icons a i,
         width: 100%;
     }
 
-    .coin-container .right-section .status{
+    .coins-container .right-section .status{
         width: 100%;
     }
 
