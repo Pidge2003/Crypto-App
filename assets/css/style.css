@@ -762,7 +762,7 @@ footer .social-icons a i,
     transition: opacity 0.3s ease, visibility 0.5s ease;
 }
 
-.overlay .show{
+.overlay.show{
     opacity: 1;
     visibility: visible;
 }
@@ -796,50 +796,45 @@ footer .social-icons a i,
     transition: all 0.3s ease;
 }
 
-.overlay button#closeMenu i:hover{
+.overlay button#closeMenu:hover i{
     color: var(--links-color);
 }
 
 
-
-
-/* 1400 px optimization */
-
 @media screen and (max-width: 1400px) {
-
-    .coins-container{
+    
+    .coin-container{
         flex-wrap: wrap;
         justify-content: space-between;
     }
 
-    .coins-container .left-section{
+    .coin-container .left-section{
         width: 38%;
     }
 
-    .coins-container .main-section{
+    .coin-container .main-section{
         width: 59%;
     }
 
-    .coins-container .right-section{
+    .coin-container .right-section{
         flex-direction: row;
         width: 100%;
         gap: 20px;
     }
 
-    .coins-container .right-section .status{
+    .coin-container .right-section .status{
         width: 33%;
     }
 
-    .coins-container .right-section .status > h3,
-    .coins-container .right-section .status:first-child > h3{
+    .coin-container .right-section .status > h3,
+    .coin-container .right-section .status:first-child > h3{
         margin: 30px 0 20px;
     }
+
 }
 
-/* 1200px Optimization*/
-
 @media screen and (max-width: 1200px) {
-
+    
     nav .right-section{
         width: 40%;
     }
@@ -847,14 +842,13 @@ footer .social-icons a i,
     .trending .coins-wrapper .container,
     .trending .nfts-wrapper .container,
     .tab-content #asset-list,
-    .tab-content #exchanges-list{
+    .tab-content #exchange-list{
         overflow-x: scroll;
     }
 
-    .coins table,
-    .nfts table,
-    #assets-list table,
-    #exchanges-list table{
+    .trending table,
+    #asset-list table,
+    #exchange-list table{
         width: 150%;
     }
 
@@ -864,7 +858,7 @@ footer .social-icons a i,
     }
 
     footer{
-        width: 60%;
+       width: 60%; 
     }
 
     .about-container .image img{
@@ -873,10 +867,8 @@ footer .social-icons a i,
 
 }
 
-/*992px screen width*/
-
-@media screen and (max-width: 992px){
-
+@media screen and (max-width: 992px) {
+    
     .global{
         gap: 30px;
     }
@@ -901,13 +893,13 @@ footer .social-icons a i,
     .trending .nfts-wrapper{
         width: 100%;
     }
-    
-    .footer{
+
+    footer{
         width: 100%;
         padding: 16px 90px;
     }
 
-    tab-content #category-list,
+    .tab-content #category-list,
     .tab-content #company-list{
         overflow-x: scroll;
     }
@@ -954,33 +946,32 @@ footer .social-icons a i,
         width: 60%;
     }
 
-    .coins-container .left-section{
+    .coin-container .left-section{
         width: 100%;
     }
 
-    .coins-container .main-section{
+    .coin-container .main-section{
         width: 100%;
         height: 50vh;
     }
 
-    .coins-container .right-section{
+    .coin-container .right-section{
         flex-wrap: wrap;
     }
 
-    .coins-container .right-section .status:first-child{
+    .coin-container .right-section .status:first-child{
         width: 100%;
     }
 
-    .coins-container .right-section .status{
+    .coin-container .right-section .status{
         width: 48%;
     }
 
-    .coins-container .right-section > h3{
+    .coin-container .right-section > h3{
         margin-top: 10px;
     }
-}
 
-/* Screen optimisation for 768px */
+}
 
 @media screen and (max-width: 768px) {
     
@@ -996,7 +987,7 @@ footer .social-icons a i,
         gap: 10px;
     }
 
-    nav.left-section .nav-links{
+    nav .left-section .nav-links{
         display: none;
     }
 
@@ -1032,6 +1023,27 @@ footer .social-icons a i,
         gap: 10px;
     }
 
+    .chart-container{
+        height: 80vh;
+    }
 
+    .search-container .item:nth-child(1),
+    .search-container .item:nth-child(2){
+        width: 100%;
+    }
+
+    .search-container .item:not(:first-child) h4{
+        margin: 10px 0 20px;
+        border-top: 1px dashed var(--border-color);
+        padding-top: 20px;
+    }
+
+    .about-container .image img{
+        width: 100%;
+    }
+
+    .coin-container .right-section .status{
+        width: 100%;
+    }
 
 }

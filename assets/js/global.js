@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         window.location.href = `/../../pages/search.html?query=${query}`;
     });
 
-    const openMenuBtn = document/getElementById('openMenu');
+    const openMenuBtn = document.getElementById('openMenu');
     const overlay =  document.querySelector('.overlay');
     const closeMenuBtn = document.getElementById('closeMenu');
 
