@@ -757,7 +757,14 @@ footer .social-icons a i,
     align-items: center;
     justify-content: center;
     gap: 40px;
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.5s ease;
+}
+
+.overlay .show{
+    opacity: 1;
+    visibility: visible;
 }
 
 .overlay .nav-links{
