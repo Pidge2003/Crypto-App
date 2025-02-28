@@ -979,3 +979,59 @@ footer .social-icons a i,
         margin-top: 10px;
     }
 }
+
+/* Screen optimisation for 768px */
+
+@media screen and (max-width: 768px) {
+    
+    .global p:last-child{
+        display: none;
+    }
+
+    nav .right-section{
+        width: 65%;
+    }
+
+    nav .left-section{
+        gap: 10px;
+    }
+
+    nav.left-section .nav-links{
+        display: none;
+    }
+
+    #openMenu{
+        display: flex;
+    }
+
+    .tab-container .tabs{
+        flex-wrap: wrap;
+        gap: 10px 0;
+    }
+
+    .tab-container .tab-button{
+        width: 50%;
+    }
+
+    #asset-list table,
+    #exchange-list table,
+    .tab-content #category-list table{
+        width: 300%;
+    }
+
+    .tab-content #company-list table{
+        width: 250%;
+    }
+
+    .tab-content #company-list table tr td.name-column{
+        width: 120px;
+    }
+
+    footer{
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+
+
+}
