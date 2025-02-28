@@ -206,3 +206,22 @@ function createWidget(container_id, widgetConfig, widgetSrc){
     }, 5000)
 }
 
+const scrollTopBtn = document.getElementById("scrollTop");
+window.onscroll = () => {
+    scrollFunction();
+}
+
+function scrollFunction(){
+    if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){
+        scrollTopBtn.style.display = "flex";
+    }else{
+        scrollTopBtn.style.display = "none";
+    }
+}
+
+function scrollToTop(){
+    // Safari
+    document.body.scrollTop = 0;
+    // Chrome, Firefox ETC
+    document.documentElement.scrollTop = 0;
+}
