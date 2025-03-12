@@ -1,4 +1,4 @@
-# Crypto Dashboard: Built with Pure JavaScript 
+# Crypto Dashboard: Built with Vanilla JavaScript 
 
 This project was a deep dive into front-end development, focusing on real-time data visualization and responsive design without the aid of frameworks. Initially I built out the design using HTML & CSS before building out functionality using Vanilla JS in conjunction with the free CoinGecko API. 
 
